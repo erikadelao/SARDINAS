@@ -71,6 +71,9 @@ class Sardinas (object):
             else:
                 self.e=self.eusuario
                 break  
+    #Recibe coordenadas X, Y ^ Z y las compara con la posición actual de las sardinas.
+    #Si las coordenadas coinciden, quiere decir que hubo impacto, entonces regresa un True
+    #De ser distintas, regresa un False
     def impacto(self, x, y, z):
         if x==self.x and y==self.y and z==self.z:
             return True
@@ -115,9 +118,12 @@ while True:
     print("Distancia sensor 3: ",banco.distanciaSensor3())
     banco.desplazamiento()
     
+    #Pedir coordenadas, en X, Y ^ Z para ser usadas en la función impacto
     x= int(input("Ingrese coordenadas en X: "))
     y= int(input("Ingrese coordenadas en Y: "))
     z= int(input("Ingrese coordenadas en Z: "))
+    #Enviar las coordenadas a la función impacto, si la función regresa un True, felicitará al usuario y terminará el juego.
+    #Si las coordenadas no coinciden, se ejecutará el codigo bajo el else y el juego volverá a empezar.
     if banco.impacto(x,y,z):
            print("¡¡¡¡¡¡¡¡FELICIDADES, LOGRASTE DARLE A LA SARDINA!!!!!!")
            break
