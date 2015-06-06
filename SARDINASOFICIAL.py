@@ -124,6 +124,7 @@ while True:
     z= int(input("Ingrese coordenadas en Z: "))
     #Enviar las coordenadas a la función impacto, si la función regresa un True, felicitará al usuario y terminará el juego.
     #Si las coordenadas no coinciden, se ejecutará el codigo bajo el else y el juego volverá a empezar.
+    print(banco.impacto(x,y,z))
     if banco.impacto(x,y,z):
            print("¡¡¡¡¡¡¡¡FELICIDADES, LOGRASTE DARLE A LA SARDINA!!!!!!")
            break
